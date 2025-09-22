@@ -14,24 +14,24 @@ function agregarAmigo() {
   }
 
   amigos.push(nombre);
-  console.log("📋 Lista actual de amigos:", amigos);
+  console.log("Lista de amigos:", amigos);
 
   input.value = "";
 
-   // Función que muestra los amigos en la lista HTML
+   // Función que muestra los amigos en la lista
   mostrarAmigos();
 }
 
 function mostrarAmigos() {
-  // 1. Obtener el elemento de la lista
+  // Obtener el elemento de la lista
   const lista = document.getElementById("listaAmigos");
 
-  // 2. Limpiar la lista existente
+  // Limpiar la lista existente
   lista.innerHTML = "";
 
-  // 3. Iterar sobre el arreglo de amigos
+  // Iterar sobre el arreglo de amigos
   for (let i = 0; i < amigos.length; i++) {
-    // 4. Crear un nuevo elemento <li> por cada amigo
+    // Crear un nuevo elemento <li> por cada amigo
     const li = document.createElement("li");
     li.textContent = amigos[i];
 
@@ -41,22 +41,23 @@ function mostrarAmigos() {
 }
 //Función para sortear el amigo secreto
 function sortearAmigo() {
-  // 1. Validar que haya amigos disponibles
+  // Validar que haya amigos disponibles
   if (amigos.length === 0) {
-    alert("⚠️ No hay amigos en la lista para sortear.");
+    alert("No hay amigos en la lista para sortear.");
     return;
   }
 
-  // 2. Generar un índice aleatorio
+  // Generar un índice aleatorio
   const indiceAleatorio = Math.floor(Math.random() * amigos.length);
 
-  // 3. Obtener el nombre sorteado
+  // Obtener el nombre sorteado
   const amigoSorteado = amigos[indiceAleatorio];
 
-  // 4. Mostrar el resultado en el HTML
+  // Mostrar el resultado
   const resultado = document.getElementById("resultado");
-  resultado.innerHTML = `🎁 El amigo secreto es: <strong>${amigoSorteado}</strong>`;
+  resultado.innerHTML = `El amigo secreto es: <strong>${amigoSorteado}</strong>`;
 }
+
 
 
 
